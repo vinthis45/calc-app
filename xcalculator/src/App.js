@@ -16,8 +16,12 @@ function App() {
 
   const handleCalculate = () => {
     try {
-      const calculatedResult = eval(input);
-      setResult(calculatedResult);
+      if (input.trim() === "") {
+        setResult("Error"); 
+      } else {
+        const calculatedResult = eval(input);
+        setResult(calculatedResult);
+      }
     } catch (error) {
       setResult("Error");
     }
